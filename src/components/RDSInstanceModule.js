@@ -50,7 +50,7 @@ function RDSInstanceModule(props){
       </FormControl>
       <FormControl className="ModuleVariable">
         <InputLabel id={'DBEngineVersion'}>DB Engine Version</InputLabel>
-        <Select labelId={'DBEngineVersion'} onChange={(event)=>{props.setModuleData(props.index, 'db_engine', event.target.value)}}>
+        <Select labelId={'DBEngineVersion'} onChange={(event)=>{props.setModuleData(props.index, 'db_engine_version', event.target.value)}}>
           {engine==='mysql'&&mysql_versions.map(version=>
             <MenuItem value={version}>{version}</MenuItem>
           )}
