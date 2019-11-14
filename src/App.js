@@ -23,13 +23,13 @@ class App extends React.Component {
     }
     moduleData[index][variable]=value;
     this.setState({moduleData});
-    document.getElementById('outdata').value=JSON.stringify({projectRole:this.state.projectRole, projectName:this.state.projectName, moduleData: this.state.moduleData});
+    document.getElementById('outdata').value=JSON.stringify({projectRole:this.state.projectRole, projectName:this.state.projectName, moduleData: this.state.moduleData}, undefined, 2);
   };
   removeModuleData = (index) => {
     const moduleData = this.state.moduleData;
     moduleData[index] = null;
     this.setState({moduleData});
-    document.getElementById('outdata').value=JSON.stringify({projectRole:this.state.projectRole, projectName:this.state.projectName, moduleData: this.state.moduleData});
+    document.getElementById('outdata').value=JSON.stringify({projectRole:this.state.projectRole, projectName:this.state.projectName, moduleData: this.state.moduleData}, undefined, 2);
 
   }
   render() {
