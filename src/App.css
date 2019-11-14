@@ -1,0 +1,47 @@
+.App {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display:flex;
+}
+
+.ProjectInput {
+  width: 64em;
+  margin:auto;
+  margin-bottom: 2em;
+  border: solid 1px;
+  padding: 1em;
+}
+
+
+
+.ProjectInputTextField {
+  margin: 1em!important;
+  width: 30em;
+  dispay:block;
+}
+
+.ModuleControls {
+  width: 30em;
+  border: solid 1px #808080;
+  padding: 2em;
+  display:block;
+  margin:auto;
+  margin-bottom: 2em;
+  width: 60em;
+}
+
+.ModuleVariable {
+  width: 20em;
+  margin: 2em!important;
+}
+
+.ModuleList {
+  width: 64em;
+  margin: auto;
+  margin-bottom: 2em;
+  border:solid 1px;
+  padding: 1em;
+}
+
+.ModuleTitle {}
