@@ -1,8 +1,14 @@
+body {
+  background: #404040;
+}
 .App {
   text-align: center;
   align-items: center;
   justify-content: center;
   display:flex;
+  color: #FFFFFF;
+  font-weight:bold!important;
+  font-family: 'Roboto';
 }
 
 .ProjectInput {
@@ -10,10 +16,17 @@
   margin:auto;
   margin-bottom: 2em;
   border: solid 1px;
+  border-radius: 8px;
   padding: 1em;
 }
 
+.MuiFormLabel-root {
+  color:#88CC88!important;
+}
 
+.MuiInputBase-root {
+  color:#FFFFFF!important;
+}
 
 .ProjectInputTextField {
   margin: 1em!important;
@@ -24,6 +37,7 @@
 .ModuleControls {
   width: 30em;
   border: solid 1px #808080;
+  border-radius: 8px;
   padding: 2em;
   display:block;
   margin:auto;
@@ -41,6 +55,7 @@
   margin: auto;
   margin-bottom: 2em;
   border:solid 1px;
+  border-radius: 8px;
   padding: 1em;
 }
 

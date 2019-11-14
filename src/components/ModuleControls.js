@@ -6,7 +6,7 @@ function ModuleControls(props){
     <div className={'ModuleControls'}>
       <div className={'ModuleTitle'}>
         {props.module.props.title}
-        <Button onClick={()=>{props.removeModule(props.index)}} style={{float:'right'}}>Remove</Button>
+        <Button onClick={()=>{props.removeModule(props.index)}} style={{float:'right',color:"#000000",background:'#CC8888'}}>Remove</Button>
         <div style={{'clear':'both'}}></div>
       </div>
 

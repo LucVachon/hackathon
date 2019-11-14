@@ -66,7 +66,7 @@ function ModuleList(props){
           <MenuItem value={'RDSC'}>RDS Cluster</MenuItem>
         </Select>
       </FormControl>
-      <Button variant={'contained'} onClick={addModule}>Add Module</Button>
+      <Button variant={'contained'} onClick={addModule} style={{background:'#88CC88'}}>Add Module</Button>
 
     </div>
   )
