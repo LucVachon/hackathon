@@ -11,7 +11,7 @@ function RDSInstanceModule(props){
     {label: 'DB Port', variable: 'db_port'},
     {label: 'DB Username', variable: 'db_username'},
     {label: 'DB Password', variable: 'db_password'},
-    {label: 'DB Allocated Storage', variable: 'db_allocated_stroage'},
+    {label: 'DB Allocated Storage', variable: 'db_allocated_storage'},
     {label: 'DB Name', variable: 'db_name'},
     {label: 'DB Ingress CIDR', variable: 'db_ingress_cidr'},
   ]

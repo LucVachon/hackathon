@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import ProjectInput from './components/ProjectInput';
 import ModuleList from './components/ModuleList';
-
+import { Button } from '@material-ui/core';
 class App extends React.Component {
   state = {
     modules: [],
@@ -23,16 +23,15 @@ class App extends React.Component {
     }
     moduleData[index][variable]=value;
     this.setState({moduleData});
-    document.getElementById('outdata').value=JSON.stringify({projectRole:this.state.projectRole, projectName:this.state.projectName, moduleData: this.state.moduleData}, undefined, 2);
   };
   removeModuleData = (index) => {
     const moduleData = this.state.moduleData;
     moduleData[index] = null;
     this.setState({moduleData});
-    document.getElementById('outdata').value=JSON.stringify({projectRole:this.state.projectRole, projectName:this.state.projectName, moduleData: this.state.moduleData}, undefined, 2);
 
   }
   submitForm = async () => {
+    //Not going to lie, 95% of this is stackoverflow answers for how to download from an AJAX response
     const response = await fetch('//localhost:8080/generate', {
       method: 'POST',
       headers: {
@@ -75,13 +74,29 @@ class App extends React.Component {
     return (
       <div className="App">
         <div className="AppContainer">
-          <h1>Slartibartfast / Terraform Nursery / Terraform Initializer</h1>
+          <div className={"AppTitle"}>Terraform Initializer</div>
           <ProjectInput setProjectRole={this.setProjectRole} setProjectName={this.setProjectName}/>
           <ModuleList setModules={this.setModules} modules={this.state.modules} removeModuleData={this.removeModuleData} setModuleData={this.setModuleData}/>
-          <form method={'post'} action={'http://localhost:8080/generate'} enctype="">
-            <textarea name='JSONOUT' placeholder='JSON OUTPUT GOES HERE' style={{width:'64em', height:'10em'}} id={'outdata'}></textarea>
-            <input type={'button'} value={'Submit'} onClick={this.submitForm}/>
-          </form>
+            {this.state.showJSON && (
+              <div>
+                <textarea name='JSONOUT'
+                          placeholder='JSON OUTPUT GOES HERE'
+                          style={{width:'64em', height:'10em'}}
+                          id={'outdata'}
+                          value={JSON.stringify(
+                            {
+                              projectRole:this.state.projectRole,
+                              projectName:this.state.projectName,
+                              moduleData: this.state.moduleData},
+                            undefined,
+                            2
+                          )
+                          }></textarea>
+              </div>
+              )
+            }
+          <Button variant='contained' className={'GreenButton'} disabled={this.state.moduleData.length===0} onClick={()=>{this.setState({showJSON:!this.state.showJSON})}}>Toggle Request Preview</Button>
+          <Button variant='contained' className={'GreenButton'} disabled={this.state.moduleData.length===0} onClick={this.submitForm}>Generate ZIP</Button>
         </div>
       </div>
     );
